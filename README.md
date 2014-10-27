@@ -19,6 +19,7 @@ Create a new page type in your root template (setup.ts)
 Example code:
 
 /*Define new page type*/
+
 ajax_test = PAGE
 
 ajax_test{
