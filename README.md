@@ -3,10 +3,9 @@ TYPO3-Extbase-Fluid-Ajax-POST-GET-Example
 
 Simple extension for testing POST/GET values with Ajax
 
+Depends on TYPO3 6.2<<
 
->>Depends on TYPO3 6.2<<
-
->>jQuery must be included<<
+jQuery must be included<<
 
 1.Step 
 Upload Extension
