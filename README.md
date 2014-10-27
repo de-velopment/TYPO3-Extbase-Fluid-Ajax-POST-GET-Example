@@ -20,18 +20,31 @@ Example code:
 
 /*Define new page type*/
 ajax_test = PAGE
+
 ajax_test{
+
 typeNum = 100
+
 10 < tt_content.list.20.deajaxpost_ajaxshow
+
 config{
+
 disableAllHeaderCode = 1
+
 /*Choose your header type (json or text/plain)*/
+
 /*additionalHeaders = Content-type:application/json*/
+
 additionalHeaders = Content-type: text/plain
+
 xhtml_cleaning = 0
+
 no_cache = 1
+
 debug = 0
+
   }
+  
 }
 
 4.Step
