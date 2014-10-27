@@ -1,0 +1,15 @@
+
+plugin.tx_deajaxpost {
+	view {
+		# cat=plugin.tx_deajaxpost/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:de_ajaxpost/Resources/Private/Templates/
+		# cat=plugin.tx_deajaxpost/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:de_ajaxpost/Resources/Private/Partials/
+		# cat=plugin.tx_deajaxpost/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:de_ajaxpost/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_deajaxpost//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

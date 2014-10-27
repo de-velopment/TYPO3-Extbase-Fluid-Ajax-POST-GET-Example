@@ -1,0 +1,128 @@
+<span class="click-get">GET Variante - Click me!</span>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+$('.click-get').click(function(e) {
+        // Part for the controller
+        var controller = 'tx_deajaxpost_ajaxshow[controller]=Result';
+        //Part for the action
+        var action = 'tx_deajaxpost_ajaxshow[action]=ajaxGet'; 
+        //definied page Type (Configuration/TypoScript/setup.txt) Line 54
+        var pagetype = '100';
+        //Get the Path
+        var path = $(location).attr('href');
+        //Fetch the text from the <span>
+        var id = $(this).text();
+    $.ajax({
+
+		//Build the URL
+        url: path +  '/?' + controller + '&' + action + '&type=' + pagetype,
+        //pass optional parameter - comma sperated ( tx_deajaxpost_ajaxshow[valueOne] : 'foo', tx_deajaxpost_ajaxshow[valueTwo] : 'Next Foo' etc.)
+        //Change tx_deajaxpost_ajaxshow to your ext key
+        data: {'tx_deajaxpost_ajaxshow[ButtonTextGet]':id},
+
+        success: function(result) {
+            console.log(result);
+             //Show Result as alert
+            alert(result);
+            // Magnific Popup: Responsive jQuery Lightbox Plugin
+            // Notice: you must include the library 
+             /*
+  $.magnificPopup.open({
+							
+								items:{
+										src: '<div id="test-product" class="white-popup">Beschriftung des Button: ' + (result) +'</div>',
+										type: 'inline'
+  								}
+	
+							});	
+*/
+          
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+});
+	 
+}); 
+	 
+	 
+	 </script>
+	 
+<span class="click-post">POST Variante - Click me!</span>
+
+<script type="text/javascript">
+<![CDATA[//<![CDATA[
+$(document).ready(function () {
+
+	$('.click-post').click(function(){
+
+			//Fetch <span> text
+			var button = $(this).text();
+
+			// Build paramters as you want
+			var params = {
+							tx_deajaxpost_ajaxshow: {
+							OneOtherParameter: 'Lorem Ipsum....',
+							SecondOtherParameter: button
+							}
+						};
+
+						//define url controller part 
+						var controller = 'tx_deajaxpost_ajaxshow[controller]=Result';
+
+						//define url action part
+						var action = 'tx_deajaxpost_ajaxshow[action]=ajaxPost';
+
+						//define page type
+						var pagetype = '100';
+                        
+                        // URL
+						var path = $(location).attr('href');
+						
+						//Build AJAX URL
+						ajaxURL = path +  '/?' + controller + '&' + action + '&type=' + pagetype;
+
+
+						//do the ajax-call
+						$.post(ajaxURL, params, function (json) {
+						//console.log(json);
+
+						// (3) evaluate the response from server
+						
+							if (json && json.success) {
+							//Output as alert, log or Magnific Popup
+							//console.log(json.content);
+							 alert(json.content);
+
+								/*
+								$.magnificPopup.open({
+														
+														items:{
+																src: '<div id="test-product" class="white-popup">Beschriftung des Button: ' + (json.content) +'</div>',
+																type: 'inline'
+
+																}
+								});	
+*/
+
+								return;
+							}
+							try {
+									console.log(json);
+							} catch (e) {
+
+							}
+				}, "json");
+
+
+
+		});
+});
+
+]]>//]]>
+</script>
+
