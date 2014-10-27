@@ -32,7 +32,6 @@ xhtml_cleaning = 0
 no_cache = 1
 debug = 0
   }
-
 }
 
 4.Step
